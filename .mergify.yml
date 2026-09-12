@@ -1,0 +1,24 @@
+pull_request_rules:
+  - name: vm7 org app blocked control
+    conditions:
+      - base = main
+      - title ~= ^VM7_ORG_BOTACCT_APPBLOCK
+    actions:
+      merge:
+        method: merge
+  - name: vm7 org bot user bypass control
+    conditions:
+      - base = main
+      - title ~= ^VM7_ORG_BOTACCT_USERBYPASS
+    actions:
+      merge:
+        method: merge
+        merge_bot_account: "livastic-vm7-primary-20260911"
+  - name: vm7 org bot account recycled-login attack
+    conditions:
+      - base = main
+      - title ~= ^VM7_ORG_BOTACCT_ATTACK
+    actions:
+      merge:
+        method: merge
+        merge_bot_account: "livastic-vm7-primary-20260911"
